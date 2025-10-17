@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "time": -20000,
+    "title": "Late Pleistocene event",
+    "lat": 48,
+    "lon": 2,
+    "type": "古人类",
+    "desc": "示例：冰期 Late Pleistocene"
+  },
+  {
+    "id": 2,
+    "time": -5000,
+    "title": "Early farming spread",
+    "lat": 30,
+    "lon": 100,
+    "type": "农业 / 古植物",
+    "desc": "示例：农业传播到东亚"
+  },
+  {
+    "id": 3,
+    "time": 500,
+    "title": "Historic migration",
+    "lat": 40,
+    "lon": 20,
+    "type": "人类迁徙 /历史",
+    "desc": "示例：历史移民事件"
+  }
+]
