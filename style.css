@@ -1,0 +1,11 @@
+/* 页面布局：上面时间条，下面地图 */
+html, body { height: 100%; margin: 0; }
+body { display: flex; flex-direction: column; height: 100vh; }
+
+/* 地图必须有高度，否则看不见 */
+#map { flex: 1; min-height: 70vh; }
+
+/* 时间条样式 */
+#timebar { height: 80px; padding: 10px; background: #f0f0f0; }
+#timeSlider { width: 80%; }
+#timeValue { font-size: 16px; margin-left: 10px; }
