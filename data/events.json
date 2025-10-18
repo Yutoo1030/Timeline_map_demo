@@ -1,14 +1,48 @@
-{
-  "id": 1,
-  "type": "route",
-  "title": "Modern human out-of-Africa southern coastal route",
-  "path": [
-    { "lat": 12.0, "lon": 38.0 },
-    { "lat": 22.0, "lon": 45.0 },
-    { "lat": 30.0, "lon": 60.0 },
-    { "lat": 20.0, "lon": 80.0 }
-  ],
-  "time": -70000,
-  "ref": "Pagani et al., 2015; López, 2016",
-  "desc": "Approx. 70 000–50 000 years ago, Homo sapiens migrated along the southern Arabian coast into South Asia and beyond."
-}
+[
+  {
+    "id": "route_oa_south",
+    "type": "route",
+    "title": "Modern humans Out of Africa – Southern coastal route",
+    "time": -70000,
+    "desc": "Homo sapiens likely dispersed along the southern Arabian coastline into South Asia and onward to Southeast Asia/Australasia (~70–50 ka).",
+    "harvard_refs": [
+      "Pagani, L. et al. (2015) Tracing the route of modern humans out of Africa using 225 genomes from Ethiopians and Egyptians. American Journal of Human Genetics, 96, 986–991.",
+      "López, S. (2016) Human dispersal out of Africa: a lasting debate. Nature Reviews Genetics, 17, 275–276.",
+      "Bae, C.J., Douka, K. and Petraglia, M.D. (2017) On the origin of modern humans: Asian perspectives. Science, 358, eaai9067."
+    ],
+    "path": [
+      { "lat": 12.5, "lon": 43.3 },   // Bab-el-Mandeb / Horn of Africa
+      { "lat": 16.0, "lon": 45.0 },   // Yemen interior
+      { "lat": 20.5, "lon": 58.6 },   // Oman coast
+      { "lat": 22.0, "lon": 66.9 },   // Makran coast
+      { "lat": 19.0, "lon": 72.8 },   // Western India
+      { "lat": 14.0, "lon": 80.0 },   // Eastern India
+      { "lat": 9.5,  "lon": 78.1 },   // Southern tip
+      { "lat": 13.5, "lon": 100.5 },  // Mainland SE Asia
+      { "lat": 8.6,  "lon": 115.2 },  // Island SE Asia
+      { "lat": -12.5,"lon": 130.8 }   // North Australia
+    ]
+  },
+  {
+    "id": "route_oa_north",
+    "type": "route",
+    "title": "Modern humans Out of Africa – Northern Levantine route",
+    "time": -60000,
+    "desc": "A northern corridor via the Nile–Sinai–Levant into Southwest Asia and Eurasia; multiple pulses likely (~60–45 ka).",
+    "harvard_refs": [
+      "Hershkovitz, I. et al. (2018) The earliest modern humans outside Africa. Science, 359, 456–459.",
+      "Kuhlwilm, M. and Fu, Q. (2022) Ancient human genomes suggest three ancestral populations for present-day Europeans. Current Opinion in Genetics & Development, 75, 101922.",
+      "Nielsen, R. et al. (2017) Tracing human history through ancient and modern genomes. Nature Reviews Genetics, 18, 395–408."
+    ],
+    "path": [
+      { "lat": 24.9, "lon": 32.9 },   // Upper Nile / Egypt
+      { "lat": 30.0, "lon": 31.2 },   // Lower Egypt
+      { "lat": 31.2, "lon": 34.8 },   // Sinai / Levant
+      { "lat": 33.5, "lon": 36.3 },   // Syria corridor
+      { "lat": 35.6, "lon": 44.4 },   // Northern Mesopotamia
+      { "lat": 37.9, "lon": 45.0 },   // Zagros foothills
+      { "lat": 39.9, "lon": 32.9 },   // Anatolian plateau
+      { "lat": 41.7, "lon": 44.8 }    // South Caucasus gateway
+    ]
+  }
+]
