@@ -1,89 +1,127 @@
-// ========== 初始化地图 ==========
+// =========================
+// Map init with EN basemap
+// =========================
 const map = L.map('map').setView([20, 0], 2);
 
-// --- 底图定义（英文 & 本地语言） ---
+// English-first basemap (Carto)
 const cartoEN = L.tileLayer(
   'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
   {
     maxZoom: 19,
-    attribution: '&copy; OpenStreetMap contributors &copy; CARTO (English base map)'
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
   }
-).addTo(map); // 默认加载英文底图
+).addTo(map);
 
+// Local-language OSM (optional toggle)
 const osmLocal = L.tileLayer(
   'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
   {
     maxZoom: 19,
-    attribution: '&copy; OpenStreetMap contributors (Local labels)'
+    attribution: '&copy; OpenStreetMap contributors'
   }
 );
 
-// --- 底图切换控件 ---
+// Overlay groups
+const eventLayer = L.layerGroup().addTo(map);
+const routeLayer = L.layerGroup().addTo(map);
+
+// Basemap + overlay controls
 L.control
-  .layers({ 'Carto Light (EN)': cartoEN, 'OSM (Local labels)': osmLocal }, null, {
-    position: 'topleft'
-  })
+  .layers(
+    { 'Carto Light (EN)': cartoEN, 'OSM (Local labels)': osmLocal },
+    { 'Events': eventLayer, 'Migration routes': routeLayer },
+    { position: 'topleft' }
+  )
   .addTo(map);
 
-// ========== 加载事件数据 ==========
-fetch('data/events.json')
-  .then((res) => res.json())
-  .then((events) => {
-    window.events = events;
-    setupSlider(events);
-  })
-  .catch((err) => {
-    console.error('❌ Failed to load events.json:', err);
-  });
+// Small legend
+const legend = L.control({ position: 'topright' });
+legend.onAdd = function () {
+  const div = L.DomUtil.create('div', 'legend');
+  div.style.background = 'white';
+  div.style.padding = '8px 10px';
+  div.style.borderRadius = '8px';
+  div.style.boxShadow = '0 1px 4px rgba(0,0,0,.2)';
+  div.innerHTML = `
+    <div style="font-weight:600;margin-bottom:6px;">Legend</div>
+    <div><span style="display:inline-block;width:10px;height:10px;background:#e74c3c;margin-right:6px;border:1px solid #000"></span> Humans</div>
+    <div><span style="display:inline-block;width:10px;height:10px;background:#27ae60;margin-right:6px;border:1px solid #000"></span> Animals</div>
+    <div><span style="display:inline-block;width:10px;height:10px;background:#2980b9;margin-right:6px;border:1px solid #000"></span> Plants</div>
+    <div><span style="display:inline-block;width:10px;height:10px;background:#8e44ad;margin-right:6px;border:1px solid #000"></span> Pathogens</div>
+    <div><span style="display:inline-block;width:18px;height:3px;background:#1f4dd8;display:inline-block;margin-right:6px;"></span> Migration route</div>
+  `;
+  return div;
+};
+legend.addTo(map);
 
-// ========== 初始化滑块 ==========
-function setupSlider(events) {
-  const slider = document.getElementById('timeSlider');
-  const tv = document.getElementById('timeValue');
+// =========================
+// Load data (events + routes)
+// =========================
+Promise.all([
+  fetch('data/events.json').then(r => r.json()).catch(() => []),
+  fetch('data/routes.json').then(r => r.json()).catch(() => [])
+]).then(([events, routes]) => {
+  window.aDNA_DATA = { events, routes };
 
-  // 获取时间范围
-  const times = events.map((ev) => ev.time);
+  // Build slider domain from both events and routes
+  const times = [
+    ...events.map(e => e.time).filter(Number.isFinite),
+    ...routes.map(r => r.time).filter(Number.isFinite)
+  ];
   const minT = Math.min(...times);
   const maxT = Math.max(...times);
 
-  slider.min = minT;
-  slider.max = maxT;
-  slider.step = 100; // 步进（可改）
-  slider.value = minT;
+  setupSlider(minT, maxT, events, routes);
+  // Initial render at min time
+  renderAll(events, routes, minT);
+}).catch(err => {
+  console.error('Data loading failed:', err);
+});
+
+// =========================
+// Slider + rendering
+// =========================
+const markers = [];
+let polylines = [];
+
+function setupSlider(minT, maxT, events, routes) {
+  const slider = document.getElementById('timeSlider');
+  const tv = document.getElementById('timeValue');
+
+  slider.min = String(minT);
+  slider.max = String(maxT);
+  slider.step = 100; // adjust granularity
+  slider.value = String(minT);
   tv.textContent = `Year: ${slider.value}`;
 
-  // 监听滑动
   slider.addEventListener('input', () => {
     const t = parseInt(slider.value);
     tv.textContent = `Year: ${t}`;
-    renderMarkers(events, t);
+    renderAll(events, routes, t);
   });
-
-  // 初始渲染
-  renderMarkers(events, parseInt(slider.value));
 }
 
-// ========== 渲染事件点 ==========
-const markers = [];
+function renderAll(events, routes, currentTime) {
+  renderMarkers(events, currentTime);
+  renderRoutes(routes, currentTime);
+}
 
+// Show events within a time window around currentTime
 function renderMarkers(events, currentTime) {
-  // 清除旧 marker
-  markers.forEach((m) => map.removeLayer(m));
+  // clear previous
+  markers.forEach(m => eventLayer.removeLayer(m));
   markers.length = 0;
 
-  const WINDOW = 1000; // 显示当前时间 ±1000 年的事件
-  events.forEach((ev) => {
+  const WINDOW = 1000; // show events within ±1000 years
+  events.forEach(ev => {
+    if (!Number.isFinite(ev.time)) return;
     if (ev.time >= currentTime - WINDOW && ev.time <= currentTime + WINDOW) {
       const color =
-        ev.type && ev.type.includes('人')
-          ? '#e74c3c'
-          : ev.type.includes('动')
-          ? '#27ae60'
-          : ev.type.includes('植')
-          ? '#2980b9'
-          : ev.type.includes('病')
-          ? '#8e44ad'
-          : '#f39c12';
+        ev.type && /人/.test(ev.type) ? '#e74c3c' :
+        ev.type && /动/.test(ev.type) ? '#27ae60' :
+        ev.type && /植/.test(ev.type) ? '#2980b9' :
+        ev.type && /病|病原|病菌|病体/.test(ev.type) ? '#8e44ad' :
+        '#f39c12';
 
       const m = L.circleMarker([ev.lat, ev.lon], {
         radius: 6,
@@ -92,14 +130,61 @@ function renderMarkers(events, currentTime) {
         weight: 1,
         fillOpacity: 0.85
       }).bindPopup(
-        `<b>${ev.title}</b><br>
-         <i>${ev.type || ''}</i><br>
-         Time: ${ev.time}<br>
-         ${ev.desc || ''}`
+        `<b>${escapeHTML(ev.title || 'Untitled')}</b><br/>
+         <i>${escapeHTML(ev.type || '')}</i><br/>
+         Time: ${ev.time}<br/>
+         ${ev.desc ? escapeHTML(ev.desc) : ''}`
       );
 
-      m.addTo(map);
+      m.addTo(eventLayer);
       markers.push(m);
     }
   });
+}
+
+// Draw routes within a time window; include Harvard refs
+function renderRoutes(routes, currentTime) {
+  // clear previous
+  polylines.forEach(p => routeLayer.removeLayer(p));
+  polylines = [];
+
+  const WINDOW = 10000; // routes are coarse in time; wider window
+  routes.forEach(rt => {
+    if (!Number.isFinite(rt.time)) return;
+    if (rt.time >= currentTime - WINDOW && rt.time <= currentTime + WINDOW) {
+      const latlngs = (rt.path || []).map(p => [p.lat, p.lon]);
+      if (!latlngs.length) return;
+
+      const line = L.polyline(latlngs, {
+        color: '#1f4dd8',
+        weight: 3.5,
+        opacity: 0.85
+      }).bindPopup(routePopupHTML(rt));
+
+      line.addTo(routeLayer);
+      polylines.push(line);
+    }
+  });
+}
+
+function routePopupHTML(rt) {
+  const refsHTML = Array.isArray(rt.harvard_refs) && rt.harvard_refs.length
+    ? `<div style="margin-top:6px;"><b>References</b><br/>${rt.harvard_refs.map(r => escapeHTML(r)).join('<br/>')}</div>`
+    : '';
+  return `
+    <b>${escapeHTML(rt.title || 'Route')}</b><br/>
+    Time: ${rt.time}<br/>
+    ${rt.desc ? escapeHTML(rt.desc) : '' }
+    ${refsHTML}
+  `;
+}
+
+// Basic HTML escaping to avoid accidental markup
+function escapeHTML(str) {
+  return String(str)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
 }
