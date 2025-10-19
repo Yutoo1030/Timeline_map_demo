@@ -17,10 +17,10 @@
       { "lat": 22.0, "lon": 66.9 },
       { "lat": 19.0, "lon": 72.8 },
       { "lat": 14.0, "lon": 80.0 },
-      { "lat": 9.5,  "lon": 78.1 },
+      { "lat": 9.5, "lon": 78.1 },
       { "lat": 13.5, "lon": 100.5 },
-      { "lat": 8.6,  "lon": 115.2 },
-      { "lat": -12.5,"lon": 130.8 }
+      { "lat": 8.6, "lon": 115.2 },
+      { "lat": -12.5, "lon": 130.8 }
     ]
   },
   {
@@ -43,6 +43,42 @@
       { "lat": 37.9, "lon": 45.0 },
       { "lat": 39.9, "lon": 32.9 },
       { "lat": 41.7, "lon": 44.8 }
+    ]
+  },
+  {
+    "id": "route_into_europe",
+    "type": "route",
+    "title": "Modern human dispersal into Europe",
+    "time": -45000,
+    "desc": "Modern humans entered Europe around 45 ka, encountering and eventually replacing Neanderthal populations. Genetic data show early admixture events.",
+    "harvard_refs": [
+      "Fu, Q. et al. (2014) Genome sequence of a 45,000-year-old modern human from western Siberia. Nature, 514, 445–449.",
+      "Hajdinjak, M. et al. (2021) Initial Upper Palaeolithic humans in Europe had recent Neanderthal ancestry. Nature, 592, 253–257."
+    ],
+    "path": [
+      { "lat": 30.0, "lon": 35.0 },
+      { "lat": 35.0, "lon": 25.0 },
+      { "lat": 40.0, "lon": 15.0 },
+      { "lat": 46.0, "lon": 10.0 },
+      { "lat": 50.0, "lon": 10.0 }
+    ]
+  },
+  {
+    "id": "route_into_americas",
+    "type": "route",
+    "title": "Peopling of the Americas",
+    "time": -16000,
+    "desc": "Ancient genomes reveal migration from Siberia across Beringia into the Americas during the late Pleistocene.",
+    "harvard_refs": [
+      "Raghavan, M. et al. (2014) Upper Palaeolithic Siberian genome reveals dual ancestry of Native Americans. Nature, 505, 87–91.",
+      "Moreno-Mayar, J.V. et al. (2018) Early human dispersals within the Americas. Science, 362, eaav2621."
+    ],
+    "path": [
+      { "lat": 60.0, "lon": 90.0 },
+      { "lat": 65.0, "lon": 140.0 },
+      { "lat": 65.0, "lon": -170.0 },
+      { "lat": 60.0, "lon": -150.0 },
+      { "lat": 50.0, "lon": -120.0 }
     ]
   }
 ]
