@@ -9,3 +9,26 @@ body { display: flex; flex-direction: column; height: 100vh; }
 #timebar { height: 80px; padding: 10px; background: #f0f0f0; }
 #timeSlider { width: 80%; }
 #timeValue { font-size: 16px; margin-left: 10px; }
+
+.leaflet-popup-content img.popup-img {
+  max-width: 220px;
+  max-height: 140px;
+  margin: 6px 6px 0 0;
+  border-radius: 6px;
+  object-fit: cover;
+}
+.leaflet-popup-content .img-row {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin-top: 4px;
+}
+.leaflet-popup-content .refs {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.35;
+}
+.leaflet-popup-content .refs b {
+  display: inline-block;
+  margin-bottom: 2px;
+}
