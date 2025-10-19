@@ -78,5 +78,52 @@
       "White, T.D. et al. (2003) Pleistocene Homo sapiens from Middle Awash, Ethiopia. Nature, 423, 742–747.",
       "Scerri, E.M.L. et al. (2018) Did our species evolve in subdivided populations across Africa? Trends in Ecology & Evolution, 33, 582–594."
     ]
-  }
+  },
+  {
+  "id": 8,
+  "time": -50000,
+  "title": "Neanderthal admixture with modern humans",
+  "lat": 37.0,
+  "lon": 40.0,
+  "type": "人群交流",
+  "desc": "Ancient DNA revealed gene flow from Neanderthals into non-African modern humans, occurring soon after the Out-of-Africa expansion (~50–60 ka).",
+  "harvard_refs": [
+    "Green, R.E. et al. (2010) A draft sequence of the Neandertal genome. Nature, 464, 711–716."
+    ],
+  "images": [
+    "assets/img/neanderthal_admixture_map.jpg"
+    ]
+  },
+  {
+  "id": 9,
+  "time": -45000,
+  "title": "Denisovan introgression into East and Southeast Asia",
+  "lat": 15.0,
+  "lon": 110.0,
+  "type": "人群交流",
+  "desc": "Genetic data show introgression from Denisovans into ancestors of present-day East and Southeast Asians, and especially Papuans and Aboriginal Australians.",
+  "harvard_refs": [
+    "Reich, D. et al. (2011) Denisova admixture and the genetic history of Melanesia. Nature, 468, 1053–1060.",
+    "Browning, S.R. et al. (2018) Analysis of human sequence data reveals two pulses of Denisovan admixture. Cell, 173, 53–61."
+    ],
+  "images": [
+    "assets/img/denisovan_introgression_map.jpg"
+    ]
+  },
+  {
+  "id": 10,
+  "time": -15000,
+  "title": "Postglacial diversification of Eurasian populations",
+  "lat": 48.0,
+  "lon": 20.0,
+  "type": "人群演化",
+  "desc": "Genomes from Upper Palaeolithic and Mesolithic Europe show population turnovers and structure leading to present-day West Eurasian ancestry.",
+  "harvard_refs": [
+    "Lazaridis, I. et al. (2014) Ancient human genomes suggest three ancestral populations for present-day Europeans. Nature, 513, 409–413.",
+    "Fu, Q. et al. (2016) The genetic history of Ice Age Europe. Nature, 534, 200–205."
+    ],
+  "images": [
+    "assets/img/postglacial_eurasia.jpg"
+    ]
+  },
 ]
