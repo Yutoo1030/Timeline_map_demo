@@ -31,3 +31,55 @@
     "Meyer, M. et al. (2016) Nuclear DNA sequences from the Middle Pleistocene Sima de los Huesos hominins. Nature, 531, 504–507."
   ]
 }
+[
+  {
+    "id": 3,
+    "time": -400000,
+    "title": "Emergence of early Neanderthal–Denisovan ancestry",
+    "lat": 50.0,
+    "lon": 10.0,
+    "type": "古人类谱系",
+    "desc": "Genomic divergence between the Neanderthal and Denisovan lineages began around 400–450 ka, following earlier separation from Homo sapiens ancestors.",
+    "harvard_refs": [
+      "Prüfer, K. et al. (2014) The complete genome sequence of a Neanderthal from the Altai Mountains. Nature, 505, 43–49.",
+      "Meyer, M. et al. (2012) A high-coverage genome sequence from an archaic Denisovan individual. Science, 338, 222–226."
+    ]
+  },
+  {
+    "id": 4,
+    "time": -300000,
+    "title": "Denisovan population in Altai region",
+    "lat": 52.0,
+    "lon": 84.0,
+    "type": "古人类",
+    "desc": "Denisovans inhabited southern Siberia (Altai) by at least 300 ka, leaving DNA traces later detected in modern populations of Oceania and Asia.",
+    "harvard_refs": [
+      "Meyer, M. et al. (2012) A high-coverage genome sequence from an archaic Denisovan individual. Science, 338, 222–226."
+    ]
+  },
+  {
+    "id": 5,
+    "time": -200000,
+    "title": "Earliest Neanderthal genomes – Sima de los Huesos, Spain",
+    "lat": 42.5,
+    "lon": -3.5,
+    "type": "古人类",
+    "desc": "Mitochondrial DNA from ~430 ka Sima de los Huesos fossils revealed an early Neanderthal lineage, pushing back the origin of Neanderthal traits.",
+    "harvard_refs": [
+      "Meyer, M. et al. (2016) Nuclear DNA sequences from the Middle Pleistocene Sima de los Huesos hominins. Nature, 531, 504–507."
+    ]
+  },
+  {
+    "id": 6,
+    "time": -150000,
+    "title": "Emergence of Homo sapiens in Africa",
+    "lat": 10.0,
+    "lon": 35.0,
+    "type": "现代人起源",
+    "desc": "Fossils from Omo Kibish (~195 ka) and Herto (~160 ka) in Ethiopia represent early anatomically modern humans; genetic evidence suggests African population structure before Out-of-Africa expansion.",
+    "harvard_refs": [
+      "White, T.D. et al. (2003) Pleistocene Homo sapiens from Middle Awash, Ethiopia. Nature, 423, 742–747.",
+      "Scerri, E.M.L. et al. (2018) Did our species evolve in subdivided populations across Africa? Trends in Ecology & Evolution, 33, 582–594."
+    ]
+  }
+]
