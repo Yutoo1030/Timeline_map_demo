@@ -88,6 +88,18 @@ function setupDiscreteSlider(timeline, events, routes) {
     tv.textContent = `Year: ${year}`;
     renderAll(events, routes, year);
   });
+
+  // 可选：方向键微调
+  slider.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+      slider.value = String(Math.max(0, parseInt(slider.value) - 1));
+      slider.dispatchEvent(new Event('input'));
+    }
+    if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+      slider.value = String(Math.min(timeline.length - 1, parseInt(slider.value) + 1));
+      slider.dispatchEvent(new Event('input'));
+    }
+  });
 }
 
 function renderAll(events, routes, currentTime) {
@@ -119,18 +131,23 @@ function renderMarkers(events, currentTime) {
   });
 }
 
-// ============ Routes (lines)
+// ============ Routes (lines) — with dateline unwrapping
 function renderRoutes(routes, currentTime) {
   polylines.forEach(p => routeLayer.removeLayer(p));
   polylines = [];
 
   routes.forEach(rt => {
     if (!Number.isFinite(rt.time) || rt.time !== currentTime) return;
-    const latlngs = (rt.path || []).map(p => [p.lat, p.lon]);
-    if (!latlngs.length) return;
+    if (!Array.isArray(rt.path) || rt.path.length < 2) return;
+
+    // 🔧 展开经度，避免跨 ±180° 经线时“抄近路”
+    const latlngs = unwrapPath(rt.path);
 
     const line = L.polyline(latlngs, {
-      color: HUMAN_COLOR, weight: 3.5, opacity: 0.95
+      color: HUMAN_COLOR,
+      weight: 3.5,
+      opacity: 0.95,
+      noClip: true
     }).bindPopup(itemPopupHTML(rt));
 
     line.addTo(routeLayer);
@@ -138,10 +155,31 @@ function renderRoutes(routes, currentTime) {
   });
 }
 
+/**
+ * 将路径中的经度“拆环”，避免跨越 ±180° 时走反方向。
+ * 若相邻点经度差的绝对值 > 180°，对当前点经度加/减 360° 直到差值 ≤ 180°。
+ */
+function unwrapPath(path) {
+  const out = [];
+  let prevLon = null;
+  for (const p of path) {
+    const lat = Number(p.lat);
+    let lon = Number(p.lon);
+    if (prevLon !== null && Number.isFinite(prevLon)) {
+      while (Math.abs(lon - prevLon) > 180) {
+        lon += (lon > prevLon) ? -360 : 360;
+      }
+    }
+    out.push([lat, lon]);
+    prevLon = lon;
+  }
+  return out;
+}
+
 // ============ Shared popup renderer (images + refs)
 function itemPopupHTML(item) {
   const title = `<b>${escapeHTML(item.title || 'Untitled')}</b>`;
-  const type = item.type ? `<br/><i>${escapeHTML(item.type)}</i>` : '';
+  const type = item.type ? `<br/><i>${escapeHTML(item.type)}</i>` : '<br/><i>route</i>';
   const time = Number.isFinite(item.time) ? `<br/>Time: ${item.time}` : '';
   const desc = item.desc ? `<br/>${escapeHTML(item.desc)}` : '';
 
