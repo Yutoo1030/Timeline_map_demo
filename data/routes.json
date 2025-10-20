@@ -13,7 +13,7 @@
       { "lat": 12.5, "lon": 43.3 },
       { "lat": 22.0, "lon": 66.9 },
       { "lat": 14.0, "lon": 80.0 },
-      { "lat": 8.6,  "lon": 115.2 },
+      { "lat": 8.6, "lon": 115.2 },
       { "lat": -12.5, "lon": 130.8 }
     ]
   },
@@ -69,5 +69,41 @@
       { "lat": 60.0, "lon": 210.0 },
       { "lat": 50.0, "lon": 240.0 }
     ]
-  }
-]
+  },
+  {
+    "id": "route_steppe_ie_origin",
+    "type": "route",
+    "title": "Copper Age steppe migration: Proto-Indo-European dispersal",
+    "time": -6500,
+    "desc": "Migration of a steppe/Caucasus population ~6.5 ka spreading Proto-Indo-European languages and steppe ancestry across Europe and Asia.",
+    "harvard_refs": [
+      "Harvard Medical School News. (2025) Ancient-DNA study identifies originators of Indo-European language family. Nature, 2025."
+    ],
+    "path": [
+      { "lat": 46.0, "lon": 48.0 },
+      { "lat": 50.0, "lon": 40.0 },
+      { "lat": 52.0, "lon": 30.0 }
+    ]
+  },
+  {
+    "id": "route_png_coastal",
+    "type": "route",
+    "title": "Migration & interaction along coastal Papua New Guinea",
+    "time": -2500,
+    "desc": "Human migrations and admixture along the coastal regions of Papua New Guinea inferred from ancient DNA, diet, and linguistic data.",
+    "harvard_refs": [
+      "Nägele, K. et al. (2025) Ancient DNA analysis reveals regional migration patterns and local interactions in coastal Papua New Guinea. Nature Ecology & Evolution, 2025."
+    ],
+    "path": [
+      { "lat": -10.0, "lon": 143.0 },
+      { "lat": -9.0, "lon": 147.0 },
+      { "lat": -8.0, "lon": 151.0 }
+    ]
+  },
+  {
+    "id": "route_medieval_europe",
+    "type": "route",
+    "title": "Early Medieval migrations across Europe (6th-8th c AD)",
+    "time": 600,
+    "desc": "Large-scale migrations from Eastern Europe into Central Europe in the Early Medieval period shown by ancient DNA (>80% ancestry replacement).",
+    "harvard_refs
