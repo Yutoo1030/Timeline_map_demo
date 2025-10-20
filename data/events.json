@@ -18,18 +18,6 @@
     "desc": "Main pulse ~70–50 ka."
   },
   {
-    "id": 7,
-    "time": -430000,
-    "title": "Sima de los Huesos mtDNA (early Neanderthal signal)",
-    "lat": 42.35,
-    "lon": -3.55,
-    "type": "古人类谱系",
-    "desc": "Middle Pleistocene hominins from Sima de los Huesos (~430 ka) yielded mtDNA showing early Neanderthal lineage.",
-    "harvard_refs": [
-      "Meyer, M. et al. (2016) Nuclear DNA sequences from the Middle Pleistocene Sima de los Huesos hominins. Nature, 531, 504–507."
-    ]
-  },
-  {
     "id": 3,
     "time": -400000,
     "title": "Emergence of early Neanderthal–Denisovan ancestry",
@@ -52,18 +40,6 @@
     "desc": "Denisovans inhabited southern Siberia (Altai) by at least 300 ka, leaving DNA traces later detected in modern populations of Oceania and Asia.",
     "harvard_refs": [
       "Meyer, M. et al. (2012) A high-coverage genome sequence from an archaic Denisovan individual. Science, 338, 222–226."
-    ]
-  },
-  {
-    "id": 5,
-    "time": -200000,
-    "title": "Earliest Neanderthal genomes – Sima de los Huesos, Spain",
-    "lat": 42.5,
-    "lon": -3.5,
-    "type": "古人类",
-    "desc": "Mitochondrial DNA from ~430 ka Sima de los Huesos fossils revealed an early Neanderthal lineage, pushing back the origin of Neanderthal traits.",
-    "harvard_refs": [
-      "Meyer, M. et al. (2016) Nuclear DNA sequences from the Middle Pleistocene Sima de los Huesos hominins. Nature, 531, 504–507."
     ]
   },
   {
@@ -98,7 +74,7 @@
     "lat": 15.0,
     "lon": 110.0,
     "type": "人群交流",
-    "desc": "Genetic data show introgression from Denisovans into ancestors of present-day East and Southeast Asians, and especially Papuans and Aboriginal Australians.",
+    "desc": "Genetic data show introgression from Denisovans into ancestors of present-day East and Southeast Asians (SEA), Papuans and Aboriginal Australians.",
     "harvard_refs": [
       "Reich, D. et al. (2011) Denisova admixture and the genetic history of Melanesia. Nature, 468, 1053–1060.",
       "Browning, S.R. et al. (2018) Analysis of human sequence data reveals two pulses of Denisovan admixture. Cell, 173, 53–61."
@@ -115,6 +91,58 @@
     "harvard_refs": [
       "Lazaridis, I. et al. (2014) Ancient human genomes suggest three ancestral populations for present-day Europeans. Nature, 513, 409–413.",
       "Fu, Q. et al. (2016) The genetic history of Ice Age Europe. Nature, 534, 200–205."
+    ]
+  },
+  {
+    "id": 11,
+    "time": -10000,
+    "title": "Neolithic transition: origin of farming in the Near East",
+    "lat": 36.5,
+    "lon": 38.5,
+    "type": "农业起源",
+    "desc": "Genome data from Pre-Pottery Neolithic farmers in the Fertile Crescent show that agriculture arose independently from local hunter-gatherers.",
+    "harvard_refs": [
+      "Lazaridis, I. et al. (2016) Genomic insights into the origin of farming in the ancient Near East. Nature, 536, 419–424.",
+      "Broushaki, F. et al. (2016) Early Neolithic genomes from the eastern Fertile Crescent. Science, 353, 499–503."
+    ]
+  },
+  {
+    "id": 12,
+    "time": -9000,
+    "title": "Independent domestication of rice and millet in East Asia",
+    "lat": 32.0,
+    "lon": 112.0,
+    "type": "农业起源",
+    "desc": "Ancient genomes indicate independent domestication centers for rice (Yangtze basin) and millet (Yellow River), marking distinct Neolithic transitions in East Asia.",
+    "harvard_refs": [
+      "Zhang, G. et al. (2020) Genomic insights into domestication of Asian rice. Science, 367, 1462–1466.",
+      "Yang, M.A. et al. (2020) Ancient DNA indicates human population shifts and rice agriculture in East Asia. Cell, 183, 890–904."
+    ]
+  },
+  {
+    "id": 13,
+    "time": -6000,
+    "title": "Domestication of animals and genomic introgression",
+    "lat": 38.0,
+    "lon": 45.0,
+    "type": "动物驯化",
+    "desc": "Ancient genomes from early domestic pigs, cattle, and horses show multiple domestication centers and later gene flow between East and West Eurasia.",
+    "harvard_refs": [
+      "Frantz, L.A.F. et al. (2019) Ancient pigs reveal multiple domestication centers and gene flow. Nature, 566, 234–238.",
+      "Librado, P. et al. (2021) The origins and spread of domestic horses from the Western Eurasian steppes. Science, 373, 131–136."
+    ]
+  },
+  {
+    "id": 14,
+    "time": -4800,
+    "title": "Emergence of Yersinia pestis and its spread along prehistoric trade routes",
+    "lat": 55.0,
+    "lon": 60.0,
+    "type": "病原体传播",
+    "desc": "Ancient DNA from the Bronze Age shows early plague spread across Eurasia with human migrations and trade, predating historical pandemics.",
+    "harvard_refs": [
+      "Rasmussen, S. et al. (2015) Early divergent strains of Yersinia pestis in Eurasia 5,000 years ago. Cell, 163, 571–582.",
+      "Spyrou, M.A. et al. (2018) Ancient pathogen genomics reveals persistent Yersinia pestis infection through time. Nature, 565, 386–390."
     ]
   }
 ]
