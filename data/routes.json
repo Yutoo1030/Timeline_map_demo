@@ -6,61 +6,51 @@
     "time": -70000,
     "desc": "Homo sapiens likely dispersed along the southern Arabian coastline into South Asia and onward to Southeast Asia/Australasia (~70–50 ka).",
     "harvard_refs": [
-      "Pagani, L. et al. (2015) Tracing the route of modern humans out of Africa using 225 genomes from Ethiopians and Egyptians. American Journal of Human Genetics, 96, 986–991.",
-      "López, S. (2016) Human dispersal out of Africa: a lasting debate. Nature Reviews Genetics, 17, 275–276.",
-      "Bae, C.J., Douka, K. and Petraglia, M.D. (2017) On the origin of modern humans: Asian perspectives. Science, 358, eaai9067."
+      "Pagani, L. et al. (2015) Tracing the route of modern humans out of Africa using 225 genomes from Ethiopians and Egyptians. AJHG, 96, 986–991.",
+      "Bae, C.J., Douka, K. & Petraglia, M.D. (2017) On the origin of modern humans: Asian perspectives. Science, 358, eaai9067."
     ],
     "path": [
       { "lat": 12.5, "lon": 43.3 },
-      { "lat": 16.0, "lon": 45.0 },
-      { "lat": 20.5, "lon": 58.6 },
       { "lat": 22.0, "lon": 66.9 },
-      { "lat": 19.0, "lon": 72.8 },
       { "lat": 14.0, "lon": 80.0 },
-      { "lat": 9.5, "lon": 78.1 },
-      { "lat": 13.5, "lon": 100.5 },
-      { "lat": 8.6, "lon": 115.2 },
+      { "lat": 8.6,  "lon": 115.2 },
       { "lat": -12.5, "lon": 130.8 }
     ]
   },
   {
-    "id": "route_oa_north",
+    "id": "route_neolithic_europe",
     "type": "route",
-    "title": "Modern humans Out of Africa – Northern Levantine route",
-    "time": -60000,
-    "desc": "A northern corridor via the Nile–Sinai–Levant into Southwest Asia and Eurasia; multiple pulses likely (~60–45 ka).",
+    "title": "Neolithic farming expansion into Europe",
+    "time": -8500,
+    "desc": "Anatolian early farmers spread agriculture into Europe through two routes — a northern Danubian and a southern Mediterranean path.",
     "harvard_refs": [
-      "Hershkovitz, I. et al. (2018) The earliest modern humans outside Africa. Science, 359, 456–459.",
-      "Kuhlwilm, M. and Fu, Q. (2022) Ancient human genomes suggest three ancestral populations for present-day Europeans. Current Opinion in Genetics & Development, 75, 101922.",
-      "Nielsen, R. et al. (2017) Tracing human history through ancient and modern genomes. Nature Reviews Genetics, 18, 395–408."
+      "Haak, W. et al. (2015) Massive migration from the steppe was a source for Indo-European languages in Europe. Nature, 522, 207–211.",
+      "Mathieson, I. et al. (2015) Genome-wide patterns of selection in 230 ancient Eurasians. Nature, 528, 499–503."
     ],
     "path": [
-      { "lat": 24.9, "lon": 32.9 },
-      { "lat": 30.0, "lon": 31.2 },
-      { "lat": 31.2, "lon": 34.8 },
-      { "lat": 33.5, "lon": 36.3 },
-      { "lat": 35.6, "lon": 44.4 },
-      { "lat": 37.9, "lon": 45.0 },
-      { "lat": 39.9, "lon": 32.9 },
-      { "lat": 41.7, "lon": 44.8 }
+      { "lat": 37.0, "lon": 35.0 },
+      { "lat": 41.0, "lon": 25.0 },
+      { "lat": 45.0, "lon": 15.0 },
+      { "lat": 48.0, "lon": 10.0 },
+      { "lat": 50.0, "lon": 5.0 }
     ]
   },
   {
-    "id": "route_into_europe",
+    "id": "route_steppe_expansion",
     "type": "route",
-    "title": "Modern human dispersal into Europe",
-    "time": -45000,
-    "desc": "Modern humans entered Europe around 45 ka, encountering and eventually replacing Neanderthal populations. Genetic data show early admixture events.",
+    "title": "Steppe pastoralist expansion across Eurasia",
+    "time": -5000,
+    "desc": "Pastoralist groups from the Pontic-Caspian steppe spread eastward and westward, transmitting both language and subsistence systems.",
     "harvard_refs": [
-      "Fu, Q. et al. (2014) Genome sequence of a 45,000-year-old modern human from western Siberia. Nature, 514, 445–449.",
-      "Hajdinjak, M. et al. (2021) Initial Upper Palaeolithic humans in Europe had recent Neanderthal ancestry. Nature, 592, 253–257."
+      "Allentoft, M.E. et al. (2015) Population genomics of Bronze Age Eurasia. Nature, 522, 167–172.",
+      "Damgaard, P. de B. et al. (2018) The first horse herders and the impact of early Bronze Age steppe expansions into Asia. Science, 360, eaar7711."
     ],
     "path": [
-      { "lat": 30.0, "lon": 35.0 },
-      { "lat": 35.0, "lon": 25.0 },
-      { "lat": 40.0, "lon": 15.0 },
-      { "lat": 46.0, "lon": 10.0 },
-      { "lat": 50.0, "lon": 10.0 }
+      { "lat": 48.0, "lon": 35.0 },
+      { "lat": 50.0, "lon": 60.0 },
+      { "lat": 52.0, "lon": 85.0 },
+      { "lat": 45.0, "lon": 100.0 },
+      { "lat": 40.0, "lon": 120.0 }
     ]
   },
   {
@@ -74,11 +64,10 @@
       "Moreno-Mayar, J.V. et al. (2018) Early human dispersals within the Americas. Science, 362, eaav2621."
     ],
     "path": [
-      { "lat": 60.0, "lon": 90.0 },
       { "lat": 65.0, "lon": 140.0 },
-      { "lat": 65.0, "lon": -170.0 },
-      { "lat": 60.0, "lon": -150.0 },
-      { "lat": 50.0, "lon": -120.0 }
+      { "lat": 65.0, "lon": 190.0 },
+      { "lat": 60.0, "lon": 210.0 },
+      { "lat": 50.0, "lon": 240.0 }
     ]
   }
 ]
