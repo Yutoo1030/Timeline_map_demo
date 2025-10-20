@@ -144,5 +144,53 @@
       "Rasmussen, S. et al. (2015) Early divergent strains of Yersinia pestis in Eurasia 5,000 years ago. Cell, 163, 571–582.",
       "Spyrou, M.A. et al. (2018) Ancient pathogen genomics reveals persistent Yersinia pestis infection through time. Nature, 565, 386–390."
     ]
+  },
+  {
+    "id": 22,
+    "time": -6500,
+    "title": "Originators of Indo-European language family from steppe/Caucasus",
+    "lat": 46.0,
+    "lon": 48.0,
+    "type": "人群迁徙",
+    "desc": "Ancient-DNA analyses identify a Caucasus–Lower Volga population (~6.5 ka, Copper Age) as originators of Proto-Indo-European, predating classic Yamnaya migrations. (Steppe_IE)",
+    "harvard_refs": [
+      "Harvard Medical School News. (2025) Ancient-DNA study identifies originators of Indo-European language family. Nature, 2025."
+    ]
+  },
+  {
+    "id": 23,
+    "time": -4000,
+    "title": "Large-scale DNA study maps 37,000 years of disease history",
+    "lat": 50.0,
+    "lon": 20.0,
+    "type": "病原体传播",
+    "desc": "Analysis of >1,300 prehistoric human genomes reveals spatiotemporal distribution of human pathogens across Eurasia. (Pathogen_Eurasia)",
+    "harvard_refs": [
+      "Phys.org. (2025) Large-scale DNA study maps 37,000 years of disease history. Nature, 2025."
+    ]
+  },
+  {
+    "id": 24,
+    "time": -2500,
+    "title": "Ancient genomes from New Guinea coastal communities reveal regional migration patterns",
+    "lat": -9.0,
+    "lon": 147.0,
+    "type": "人群迁徙",
+    "desc": "Ancient DNA, dietary and linguistic data show migration and local interactions in coastal Papua New Guinea over the past ~2,500 years. (PNG_Coastal)",
+    "harvard_refs": [
+      "Nägele, K. et al. (2025) Ancient DNA analysis reveals regional migration patterns and local interactions in coastal Papua New Guinea. Nature Ecology & Evolution, 2025."
+    ]
+  },
+  {
+    "id": 18,
+    "time": 600,
+    "title": "Large-scale population movement from Eastern Europe during 6th–8th centuries",
+    "lat": 52.0,
+    "lon": 17.0,
+    "type": "人群迁徙",
+    "desc": "Ancient DNA shows >80% ancestry replacement in Eastern Europe during 6th–8th centuries AD. (Early Medieval Europe)",
+    "harvard_refs": [
+      "Gretzinger, J. et al. (2025) Ancient DNA connects large-scale migration with the early medieval transformation of Europe. Nature, 2025."
+    ]
   }
 ]
